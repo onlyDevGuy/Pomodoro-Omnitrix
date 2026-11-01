@@ -12,7 +12,8 @@ export async function askForNotifications() {
 /** Only shows when the app is in the background; on screen, the dial already says it. */
 export async function notify(title: string, body: string) {
   if (!notificationsSupported() || Notification.permission !== 'granted' || !document.hidden) return;
-  const options: NotificationOptions = { body, icon: '/pwa-192x192.png', badge: '/pwa-64x64.png', tag: 'omnitrix' };
+  const base = import.meta.env.BASE_URL;
+  const options: NotificationOptions = { body, icon: `${base}pwa-192x192.png`, badge: `${base}pwa-64x64.png`, tag: 'omnitrix' };
   try {
     const reg = await navigator.serviceWorker?.getRegistration();
     if (reg) await reg.showNotification(title, options);

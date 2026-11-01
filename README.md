@@ -1,5 +1,7 @@
 # Omnitrix Focus Timer
 
+**Live:** https://onlydevguy.github.io/Pomodoro-Omnitrix/
+
 A fan-made pomodoro timer inspired by the 2005 Omnitrix. Every alien form is a session length: twist the dial to pick one, slam the face to transform, and stay in hero mode until it times out.
 
 ## Run it
@@ -8,6 +10,7 @@ A fan-made pomodoro timer inspired by the 2005 Omnitrix. Every alien form is a s
 npm install
 npm run dev      # http://localhost:4395
 npm run build    # production build in dist/, installable and works offline
+npm run preview  # serve that build at http://localhost:4396/Pomodoro-Omnitrix/
 npm run icons    # regenerate app icons from public/favicon.svg
 ```
 
@@ -32,6 +35,10 @@ npm run icons    # regenerate app icons from public/favicon.svg
 | Transform | Tap the face or press Transform | Space, or Enter in the task box |
 | Pause / resume | Pause button | Space |
 | Mute | Speaker button | M |
+
+## Deploying
+
+Every push to `main` builds the app and publishes it to GitHub Pages through `.github/workflows/deploy.yml`. Production builds are served from `/Pomodoro-Omnitrix/`; if the repo is renamed, update `base` in `vite.config.ts` to match.
 
 ## Stack
 
